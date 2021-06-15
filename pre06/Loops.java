@@ -22,6 +22,8 @@ public class Loops{
 		System.out.println(myexp(1,2));
 		System.out.println(myexp(1,6));
 
+		check(2);
+
 	}//end main
 	
 	/* @desc exercise 3
@@ -70,12 +72,20 @@ public class Loops{
 		double result = 0;
 		
 		for(int i = 0; i < n; i++) {
-			result += power(x,i+1) / factorial(i+1);
+			result += power(x,i+1) / factorial(i+1); 
 		}//end for
 
 		return (result);
 
 	}//end myexp
+	
+	public static void check(int x) {
+		System.out.printf("%d\\t%f\\t%f", x, myexp(x), Math.exp(x));
+		
+	}//end check
+	
+	
+	
 	
 	
 	
