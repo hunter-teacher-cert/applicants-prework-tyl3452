@@ -6,7 +6,7 @@ public class Date{
 	
 	
 	public static void main(String[] args) {
-		System.out.println("Eric Liu pre01");
+		System.out.println("Eric Liu pre02");
 	
 		String day = "Tuesday";
 		int date = 15;
