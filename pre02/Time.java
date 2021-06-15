@@ -23,10 +23,10 @@ public class Time{
 		
 		//time since I started
 		LocalTime currentTime = LocalTime.now();
-		int currentSecsSinceMidnight = (currentTime.getHour()*60*60) + (currentTime.getMinute()*60) + currentTime.getSecond() - secondsSinceMidnight;
-		int secondElapsed = currentSecsSinceMidnight % 60;
-		int minuteElapsed = currentSecsSinceMidnight / 60 ;
-		int hourElapsed = currentSecsSinceMidnight / 3600;
+		int elapsedSecs = (currentTime.getHour()*60*60) + (currentTime.getMinute()*60) + currentTime.getSecond() - secondsSinceMidnight;
+		int secondElapsed = elapsedSecs % 60;
+		int minuteElapsed = elapsedSecs / 60 ;
+		int hourElapsed = elapsedSecs / 3600;
 		
 		System.out.printf("Time Elapsed - %d hour(s), %d minute(s), %d second(s)\n", hourElapsed, minuteElapsed, secondElapsed); 
 		
