@@ -56,7 +56,7 @@ public class Methods{
 	}//end isTriangle
 		
 
-/* @desc exercise 8
+	/* @desc exercise 8
 	 * ackermann function
 	 *
 	 * @param integer m 
