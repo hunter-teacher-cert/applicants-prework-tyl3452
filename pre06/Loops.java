@@ -22,7 +22,21 @@ public class Loops{
 		System.out.println(myexp(1,2));
 		System.out.println(myexp(1,6));
 
-		check(2);
+		//test check
+		System.out.println("Test check");
+		double i = 0.1;
+		while(i < 101) {
+			check(i);
+			i *= 10;
+		}//end while
+
+		//test check with negative x
+		System.out.println("Test check - negative x");
+		double r = -0.1;
+		while(r > -101) {
+			check(i);
+			r *= 10;
+		}//end while
 
 	}//end main
 	
@@ -67,9 +81,9 @@ public class Loops{
 	 * @param integer n is number of terms
 	 * @return double of the resulting expression
 	 */
-	public static double myexp(int x, int n) {
+	public static double myexp(double x, int n) {
 		//iterative myexp
-		double result = 0;
+		double result = 1;
 		
 		for(int i = 0; i < n; i++) {
 			result += power(x,i+1) / factorial(i+1); 
@@ -79,8 +93,8 @@ public class Loops{
 
 	}//end myexp
 	
-	public static void check(int x) {
-		System.out.printf("%d\\t%f\\t%f", x, myexp(x), Math.exp(x));
+	public static void check(double x) {
+		System.out.printf("%f\t%f\t%f\n", x, myexp(x,15), Math.exp(x));
 		
 	}//end check
 	
