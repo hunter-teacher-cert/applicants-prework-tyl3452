@@ -28,7 +28,7 @@ public class ArraysTest{
 
 	}//end main
 	
-	
+	//Ex 1
 	public static double[] powArray(double[] a, int power) {
 		
 		double[] b = new double[a.length];
@@ -40,7 +40,7 @@ public class ArraysTest{
 
 	}//end powArray		
 	
-	
+	//Ex 1
 	public static int[] histogram(int[] scores) {
 		
 		int[] counters = new int[100];
@@ -52,7 +52,7 @@ public class ArraysTest{
 		
 	}//end histogram
 	
-	
+	// Ex 4
 	public static int indexOfMax(int[] stuff) {
 		
 		int currentIndex = 0;
@@ -67,6 +67,8 @@ public class ArraysTest{
 	}//end indexOfMax
 	
 	
+	
+	// Ex. 5
 	public static boolean[] sieve(int n) {
 		boolean[] primeArray = new boolean[n];
 		
@@ -80,6 +82,7 @@ public class ArraysTest{
 		
 	}//end sieve
 	
+	// Ex. 5
 	public static boolean isPrime(int number) {
 		boolean flag = true;
 		for (int i = 2; i < number; i++) {
