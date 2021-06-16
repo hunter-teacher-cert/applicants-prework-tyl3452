@@ -73,8 +73,8 @@ public class Craps{
 		int numRounds = in.nextInt();
 		
 
-		for (int r = 0; r < numRounds; r++) {
-			System.out.printf("********Round %d********\n", r+1);
+		for (int r = 1; r <= numRounds; r++) {
+			System.out.printf("********Round %d********\n", r);
 			if (round())
 				System.out.printf("Shooter wins round %d\n", r);
 			else
