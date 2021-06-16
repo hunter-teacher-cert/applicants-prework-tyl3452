@@ -71,10 +71,7 @@ public class ArraysTest{
 		boolean[] primeArray = new boolean[n];
 		
 		for (int i = 0; i < n; i++) {
-			if (isPrime(i)) // call isPrime 
-				primeArray[i] = true;
-			else
-				primeArray[i] = false;
+			primeArray[i] = isPrime(i);
 		}//end for i
 		
 		return (primeArray);
