@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class Craps{
@@ -32,27 +33,32 @@ public class Craps{
 	}//end shoot
 	
 	
-	/* @desc checks win or lose
+	/* @desc checks win or lose for each round
 	 * 
 	 * @return boolean if shooter wins or loses
 	 */
-	public static int round()
-		currentRoll = shoot(2,6);
+	public static boolean round() {
+		int currentRoll = shoot(2,6);
+		System.out.printf("Shooter rolls : %d\n", currentRoll);
 		if (currentRoll == 2 || currentRoll == 3 || currentRoll == 12) {
 			return false;
 		} else if (currentRoll == 7 || currentRoll == 11) {
 			return true;
 		} else { // point is established and must roll point to win
 			int point = currentRoll;
+			System.out.printf("The point is now : %d\n", point);
 			while(true) {
 				currentRoll = shoot(2,6);
-				if (currentRoll == point)
+				System.out.printf("The point is %d and the current roll is %d\n", point, currentRoll);
+				if (currentRoll == point) {
 					return true;
+				} else if (currentRoll == 7) {
+					return false;
+				} else {
+					System.out.println("We roll again!");
+				}
 			}//end while
 		}//end else
-			
-			
-			
 			
 	}//end round
 	
@@ -60,8 +66,15 @@ public class Craps{
 	
 	public static void main(String[] args) {
 		System.out.println("Eric Liu pre08 - Craps");
+		
+		// Ask user how many rounds to play
+		Scanner in = new Scanner(System.in);
+		System.out.print("How many rounds? : ");
+		int numRounds = in.nextInt();
+		
 
-		for (int r = 0; r < args[0]; r++) {
+		for (int r = 0; r < numRounds; r++) {
+			System.out.printf("********Round %d********\n", r+1);
 			if (round())
 				System.out.printf("Shooter wins round %d\n", r);
 			else
