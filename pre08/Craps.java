@@ -1,3 +1,5 @@
+import java.util.Random;
+
 
 public class Craps{
 	
@@ -7,8 +9,8 @@ public class Craps{
 	 * @return int between 1 and the number n
 	 */
 	public static int roll(int n) {
-		
-		
+		Random dice = new Random();
+		return (dice.nextInt(n)+1);	
 		
 	}//end roll
 	
@@ -20,8 +22,12 @@ public class Craps{
 	 * @return int sum result of rolling the dice
 	 */
 	public static int shoot(int numDice, int maxValue) {
+		int result = 0;
+		for (int i = 0; i < numDice; i++) {
+			result += roll(maxValue);
+		}//end for
 		
-		
+		return (result);
 		
 	}//end shoot
 	
@@ -30,18 +36,38 @@ public class Craps{
 	 * 
 	 * @return boolean if shooter wins or loses
 	 */
-	public static int round(int numDice, int maxValue) {
-		
-		
-		
+	public static int round()
+		currentRoll = shoot(2,6);
+		if (currentRoll == 2 || currentRoll == 3 || currentRoll == 12) {
+			return false;
+		} else if (currentRoll == 7 || currentRoll == 11) {
+			return true;
+		} else { // point is established and must roll point to win
+			int point = currentRoll;
+			while(true) {
+				currentRoll = shoot(2,6);
+				if (currentRoll == point)
+					return true;
+			}//end while
+		}//end else
+			
+			
+			
+			
 	}//end round
 	
 	
 	
 	public static void main(String[] args) {
-		System.out.println("Eric Liu pre08");
+		System.out.println("Eric Liu pre08 - Craps");
 
-		//test powArray
+		for (int r = 0; r < args[0]; r++) {
+			if (round())
+				System.out.printf("Shooter wins round %d\n", r);
+			else
+				System.out.printf("Shooter loses round %d\n", r);
+		}//end for
+		
 		
 	}//end main
 }//end class
