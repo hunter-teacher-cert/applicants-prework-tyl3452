@@ -71,17 +71,11 @@ public class ArraysTest{
 		boolean[] primeArray = new boolean[n];
 		
 		for (int i = 0; i < n; i++) {
-			for (int j = 2; j <= i; ++j) {
-				if (i % j == 0 ) {
-					primeArray[i] = false;
-				} else {
-					primeArray[i] = true;
-				}
-			}//end for j
-			
-				
+			if (isPrime(i)) // call isPrime 
+				primeArray[i] = true;
+			else
+				primeArray[i] = false;
 		}//end for i
-		
 		
 		return (primeArray);
 		
@@ -89,7 +83,17 @@ public class ArraysTest{
 		
 	}//end sieve
 	
-	
+	public static boolean isPrime(int number) {
+		boolean flag = true;
+		for (int i = 2; i < number; i++) {
+			if(number%i == 0) { //if divisible by another number
+				return (false);
+			}
+		}//end for			
+		
+		return (flag);
+
+	}//end isPrime
 	
 	
 }//end class
