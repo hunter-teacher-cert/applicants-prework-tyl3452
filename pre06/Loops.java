@@ -17,10 +17,16 @@ public class Loops{
 		System.out.println(factorial(12));
 
 		//test myexp
-		System.out.println("Test myexp");
+		System.out.println("Test myexp power 1");
 		System.out.println(myexp(1,1));
 		System.out.println(myexp(1,2));
 		System.out.println(myexp(1,6));
+
+		//test myexp 2
+		System.out.println("Test myexp power 2");
+		System.out.println(myexp(2,1));
+		System.out.println(myexp(2,2));
+		System.out.println(myexp(2,6));
 
 		//test check
 		System.out.println("Test check");
@@ -34,7 +40,7 @@ public class Loops{
 		System.out.println("Test check - negative x");
 		double r = -0.1;
 		while(r > -101) {
-			check(i);
+			check(r);
 			r *= 10;
 		}//end while
 
