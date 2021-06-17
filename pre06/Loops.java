@@ -104,9 +104,4 @@ public class Loops{
 		
 	}//end check
 	
-	
-	
-	
-	
-	
 }//end class
